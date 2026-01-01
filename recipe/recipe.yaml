@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyCroscopy
-  version: 0.62.0
+  version: 0.63.3
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|lower }}-${{ version }}.tar.gz
-  sha256: ccf5a412e751f08c01b72e7f97b7f9c5f6eeac82451145db951d4a9183c063d3
+  sha256: d51e3733ee829a52ac4839f58e2880baa3488380022d8536d43e2671cdf15ac4
 
 build:
   number: 1
@@ -26,20 +26,23 @@ requirements:
   run:
     - python >=${{ python_min }}
     - numpy >=1.13.0
-    - scipy >=0.17.1
+    - scipy >=0.17,<1.10.2
     - scikit-image >=0.12.3
     - scikit-learn >=0.17.1
     - matplotlib-base >=2.0.0
-    - pytorch
+    - pytorch >=1.0.0
     - tensorly >=0.6.0
     - tqdm
-    - psutil
-    - six
-    - pillow
-    - joblib >=0.11.0
     - ipywidgets >=5.2.2
-    - ipython  # Beginning with IPython 6.0, Python 3.3 and above is require
-    - sidpy >=0.0.6
+    - simpleitk
+    - ipython
+    - ipympl
+    - pywget
+    - SciFiReaders >=0.10.0
+    - sidpy >=0.12.1
+    - cvxopt >=1.2.7
+    - pyTEMlib >=0.2023.8.0
+    - pysptools
 
 tests:
   - python:

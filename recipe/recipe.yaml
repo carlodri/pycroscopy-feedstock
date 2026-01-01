@@ -19,16 +19,17 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python ${{ python_min }}.*
     - pip
+    - setuptools
     - pytest-runner
   run:
-    - python >=3
+    - python >=${{ python_min }}
     - numpy >=1.13.0
     - scipy >=0.17.1
     - scikit-image >=0.12.3
     - scikit-learn >=0.17.1
-    - matplotlib >=2.0.0
+    - matplotlib-base >=2.0.0
     - pytorch
     - tensorly >=0.6.0
     - tqdm
@@ -45,8 +46,8 @@ tests:
       imports:
         - pycroscopy
       pip_check: false
-
       python_version: ${{ python_min }}.*
+
 about:
   license: MIT
   license_file: LICENSE.txt
